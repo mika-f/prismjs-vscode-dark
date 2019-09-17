@@ -1,0 +1,14 @@
+{
+  "name": "@mika-f/prismjs-vscode-dark-plus",
+  "version": "1.0.0",
+  "description": "VSCode Dark Plus theme for Prism.js",
+  "main": "themes/dark-plus-theme.css",
+  "repository": "https://github.com/mika-f/prismjs-vscode-dark-plus",
+  "author": "Fuyuno Mikazuki",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+  },
+  "devDependencies": {
+  }
+}
