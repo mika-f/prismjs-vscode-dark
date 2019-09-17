@@ -1,0 +1,207 @@
+/*
+ Name  : VSCode Default Dark Plus
+ Author: Fuyuno Mikazuki <https://mochizuki.moe>
+
+ Original Color by Microsoft Visual Studio Code <https://github.com/microsoft/vscode> and dark-plus-syntax <https://github.com/dunstontc/dark-plus-syntax> 
+*/
+$color-base: #d4d4d4;
+$color-builtin: #4ec9b0;
+$color-class: #d7ba7d;
+$color-comment: #6a9955;
+$color-deleted: #f44747;
+$color-function: #dcdcaa;
+$color-keyword: #569cd6;
+$color-number: #b5cea8;
+$color-operator: #d4d4d4;
+$color-regex: #646695;
+$color-string: #ce9178;
+$color-variable: #9cdcfe;
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: Consolas, "Courier New", Courier, monospace;
+  font-size: 90%;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  line-height: 1.5;
+  color: $color-base;
+  text-align: left;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  white-space: pre;
+  background-color: #1e1e1e;
+  word-spacing: normal;
+}
+
+/* code blocks */
+pre[class*="language-"] {
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border: 0.3em solid $color-base;
+  border-radius: 0.5em;
+}
+
+code[class*="language-"]::-moz-selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::-moz-selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::-moz-selection,
+pre[class*="language-"] ::selection {
+  background-color: #add6ff26;
+}
+
+/* inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal;
+  border: 0.13em solid $color-base;
+  border-radius: 0.3em;
+}
+
+/* common tokens */
+.token {
+  &.annotation,
+  &.builtin {
+    color: $color-builtin;
+  }
+
+  &.boolean {
+    color: $color-keyword;
+  }
+
+  &.comment,
+  &.doctype {
+    color: $color-comment;
+  }
+
+  &.constant,
+  &.class-name {
+    color: $color-builtin;
+  }
+
+  &.deleted {
+    color: $color-deleted;
+  }
+
+  &.function {
+    color: $color-function;
+  }
+
+  &.keyword {
+    color: $color-keyword;
+  }
+
+  &.macro {
+    &.property {
+      color: $color-keyword;
+    }
+  }
+
+  &.number {
+    color: $color-number;
+  }
+
+  &.operator {
+    color: $color-operator;
+  }
+
+  &.tag {
+    .token {
+      &.attr-name {
+        color: $color-variable;
+      }
+
+      &.attr-value {
+        color: $color-string;
+
+        &.punctuation {
+          color: $color-string;
+        }
+      }
+
+      &.class-name {
+        color: $color-builtin;
+      }
+
+      &.punctuation {
+        color: $color-base;
+        opacity: 0.7;
+      }
+
+      &.tag {
+        color: $color-keyword;
+      }
+    }
+  }
+
+  &.parent {
+    &.important {
+      color: $color-keyword;
+    }
+  }
+
+  &.regex {
+    color: $color-regex;
+  }
+
+  &.selector {
+    color: $color-class;
+  }
+
+  &.string {
+    color: $color-string;
+  }
+
+  &.variable {
+    color: $color-variable;
+  }
+}
+
+/* JavaScript React, TypeScript React */
+code.language-tsx,
+code.language-jsx,
+pre.language-tsx,
+pre.language-jsx {
+  .token {
+    &.interpolation {
+      .interpolation-punctuation {
+        color: $color-keyword;
+      }
+    }
+
+    &.tag {
+      .token {
+        &.script {
+          .token {
+            &.punctuation {
+              color: $color-keyword;
+            }
+
+            &.script-punctuation {
+              color: $color-base;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* SASS, SCSS */
+code.language-sass,
+code.language-scss {
+  .token {
+    &.property {
+      color: $color-variable;
+    }
+  }
+}
