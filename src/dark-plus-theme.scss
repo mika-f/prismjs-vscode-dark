@@ -142,14 +142,26 @@ pre[class*="language-"] ::selection {
     }
   }
 
+  &.url {
+    /* text-decoration: underline */
+  }
+
   &.parent {
     &.important {
       color: $color-keyword;
     }
   }
 
+  &.property {
+    color: $color-variable;
+  }
+
   &.regex {
     color: $color-regex;
+  }
+
+  &.rule {
+    color: $color-keyword;
   }
 
   &.selector {
