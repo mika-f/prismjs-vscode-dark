@@ -1,16 +1,21 @@
 {
-  "name": "@mika-f/prismjs-vscode-dark-plus",
+  "name": "@mika-f/prismjs-vscode-dark",
   "version": "1.0.0",
   "description": "VSCode Dark Plus theme for Prism.js",
-  "main": "themes/dark-plus-theme.css",
-  "repository": "https://github.com/mika-f/prismjs-vscode-dark-plus",
+  "main": "dist/dark-plus-theme.css",
+  "repository": "https://github.com/mika-f/prismjs-vscode-dark",
   "author": "Fuyuno Mikazuki",
   "license": "MIT",
   "private": false,
   "scripts": {
     "start": "gulp start",
     "dev": "parcel public/index.html",
-    "build": "gulp build"
+    "prebuild": "rm -rf ./dist",
+    "build": "gulp build",
+    "prepublishOnly": "yarn run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
